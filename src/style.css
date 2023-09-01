@@ -1,0 +1,19 @@
+:root {
+    --footer-height: 100px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    height: 50px;
+}
+
+main {
+    min-height: calc(100vh - 50px - var(--footer-height));
+}
+
+footer {
+    height: var(--footer-height);
+}
