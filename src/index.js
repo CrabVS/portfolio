@@ -1,4 +1,6 @@
 import './reset.css';
 import './style.css';
 
-console.log('works');
+import initiateHeader from './components/header/header';
+
+initiateHeader();

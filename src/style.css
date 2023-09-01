@@ -1,19 +1,36 @@
 :root {
     --footer-height: 100px;
+    --circle-size: 200px;
 }
 
 * {
     box-sizing: border-box;
 }
 
-header {
-    height: 50px;
+body {
+    overflow-x: hidden;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.container {
+    transform-origin: top left;
+    transition: transform 0.5s linear;
+}
+
+.container.show-nav {
+    transform: rotate(-20deg);
 }
 
 main {
-    min-height: calc(100vh - 50px - var(--footer-height));
+    min-height: calc(100vh - var(--footer-height));
+    background-color: cyan;
+    padding: 50px;
 }
 
 footer {
     height: var(--footer-height);
+    background-color: orange;
 }

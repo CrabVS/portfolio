@@ -1,0 +1,39 @@
+header {
+    position: fixed;
+    top: calc(var(--circle-size) / -2);
+    left: calc(var(--circle-size) / -2);
+}
+
+.circle {
+    background-color: red;
+    height: var(--circle-size);
+    width: var(--circle-size);
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+    transform: rotate(-70deg);
+}
+
+.circle button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: calc(var(--circle-size) / 2);
+    background: transparent;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.circle button.close {
+    top: 63%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+.circle button.open {
+    left: 63%;
+}
