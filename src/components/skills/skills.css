@@ -1,0 +1,50 @@
+.skills-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.head-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    transition-duration: 1s;
+}
+
+.head-icon {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    transition-duration: 1s;
+}
+
+.skill-icon {
+    position: absolute;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition-duration: 1s;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    z-index: -1;
+}
+
+.skills-container {
+    min-height: 200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 20px;
+    gap: 20px;
+}
+
+.skill-card {
+    border: 1px solid black;
+    min-height: 150px;
+    border-radius: 8px;
+    opacity: 0;
+    transition-duration: 1s;
+}
