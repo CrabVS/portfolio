@@ -1,6 +1,7 @@
 :root {
     --footer-height: 100px;
     --circle-size: 200px;
+    --header-height: 50px;
 }
 
 * {
@@ -25,7 +26,7 @@ body {
 }
 
 main {
-    min-height: calc(100vh - var(--footer-height));
+    min-height: calc(100vh - var(--footer-height) - var(--header-height));
     background-color: cyan;
     padding: 50px;
 }

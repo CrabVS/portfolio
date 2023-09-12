@@ -1,39 +1,45 @@
 header {
-    position: fixed;
-    top: calc(var(--circle-size) / -2);
-    left: calc(var(--circle-size) / -2);
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: center;
 }
 
-.circle {
-    background-color: red;
-    height: var(--circle-size);
-    width: var(--circle-size);
-    border-radius: 50%;
+nav {
     position: relative;
-    transition: transform 0.5s linear;
+    margin: 6px 0;
+    background-color: red;
 }
 
-.container.show-nav .circle {
-    transform: rotate(-70deg);
+nav a {
+    display: inline-block;
+    padding: 10px;
+    margin: 0 2px;
+    min-width: 75px;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    transition-duration: 0.6s;
+    color: #fff;
 }
 
-.circle button {
+.selector {
+    height: 100%;
+    width: 70px;
+    background-color: yellow;
+    display: inline-block;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    height: calc(var(--circle-size) / 2);
-    background: transparent;
-    border: none;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-.circle button.close {
-    top: 63%;
-    transform: rotate(90deg);
-    transform-origin: top left;
-}
-
-.circle button.open {
-    left: 63%;
+    left: 0;
+    top: 0;
+    text-transform: uppercase;
+    z-index: 1;
+    border-radius: 50px;
+    transition-duration:0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: #05abe0;
+    background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    background: -webkit-linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+    background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
 }
