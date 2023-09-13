@@ -1,4 +1,13 @@
 import './skills.css';
+import packageIcon from '../../res/package-variant.svg';
+import htmlIcon from '../../res/language-html5.svg';
+import cssIcon from '../../res/language-css3.svg';
+import jsIcon from '../../res/language-javascript.svg';
+import angularIcon from '../../res/angularjs.svg';
+import npmIcon from '../../res/npm.svg';
+import webpackIcon from '../../res/webpack.svg';
+
+const iconsImgs = [htmlIcon, cssIcon, jsIcon, angularIcon, npmIcon, webpackIcon];
 
 const skillIcons = Array.from(document.querySelectorAll('.head-icon .skill-icon'));
 const skillsContainer = document.querySelector('.skills-container');
@@ -22,9 +31,14 @@ const getSkillCards = function getSkillCards() {
   return skillCards;
 };
 
-const createNewCard = function createNewCard() {
+const createNewCard = function createNewCard(index) {
   const card = document.createElement('div');
   card.classList.add('skill-card');
+
+  const cardImg = document.createElement('div');
+  cardImg.classList.add('skill-card-img');
+  card.appendChild(cardImg);
+  cardImg.style.backgroundImage = `url('${iconsImgs[index]}')`;
 
   skillsContainer.appendChild(card);
 };
@@ -45,7 +59,9 @@ const moveIcon = function moveIconToCard(index, skillCards) {
   skillIcons[index].style.left = `${nextLeftPos + cardWidth / 2}px`;
   skillIcons[index].style.opacity = 0;
 
-  lastCard.style.opacity = 1;
+  setTimeout(() => {
+    lastCard.style.opacity = 1;
+  }, 200);
 
   setTimeout(() => {
     skillIcons[index].remove();
@@ -97,14 +113,19 @@ const revealIcon = function revealIconFromHead(index) {
   }
 
   setTimeout(() => {
-    createNewCard();
+    createNewCard(index);
     const skillCards = getSkillCards();
     moveIcon(index, skillCards);
   }, 1000);
 };
 
 const initiateSkills = function initiateSkills() {
-  skillIcons.forEach((icon, index) => {
+  const headIcon = document.querySelector('.head-container .head-icon');
+  headIcon.style.backgroundImage = `url('${packageIcon}')`;
+
+  skillIcons.forEach((i, index) => {
+    const icon = i;
+    icon.style.backgroundImage = `url('${iconsImgs[index]}')`;
     setTimeout(() => {
       revealIcon(index);
     }, 300 * (index + 1));
