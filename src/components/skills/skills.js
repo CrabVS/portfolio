@@ -31,14 +31,30 @@ const getSkillCards = function getSkillCards() {
   return skillCards;
 };
 
+// const createNewCard = function createNewCard(index) {
+//   const card = document.createElement('div');
+//   card.classList.add('skill-card');
+
+//   const cardImg = document.createElement('div');
+//   cardImg.classList.add('skill-card-img');
+//   card.appendChild(cardImg);
+//   cardImg.style.backgroundImage = `url('${iconsImgs[index]}')`;
+
+//   skillsContainer.appendChild(card);
+// };
+
 const createNewCard = function createNewCard(index) {
   const card = document.createElement('div');
   card.classList.add('skill-card');
 
-  const cardImg = document.createElement('div');
-  cardImg.classList.add('skill-card-img');
-  card.appendChild(cardImg);
-  cardImg.style.backgroundImage = `url('${iconsImgs[index]}')`;
+  card.innerHTML = `
+    <div class="skill-card-inner">
+      <div class="skill-card-front">
+        <img src="${iconsImgs[index]}" class="skill-card-img">
+      </div>
+      <div class="skill-card-back">Test</div>
+    </div>
+  `;
 
   skillsContainer.appendChild(card);
 };
