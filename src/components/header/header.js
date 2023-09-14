@@ -1,8 +1,22 @@
 import './header.css';
+import initiateSkills from '../skills/skills';
 
 const links = Array.from(document.querySelectorAll('nav a'));
 const selector = document.querySelector('nav .selector');
 const nav = document.querySelector('nav');
+
+const updatePage = function updateToNewPage(link) {
+  switch (link) {
+    case 'Home':
+      console.log('home');
+      break;
+    case 'Skills':
+      initiateSkills();
+      break;
+    default:
+      break;
+  }
+};
 
 const getActiveLink = function getActiveLink() {
   return document.querySelector('nav a.active');
@@ -34,6 +48,7 @@ const addNavListeners = function addNavListeners() {
       removeActiveClass();
       link.classList.add('active');
       updateSelector();
+      updatePage(link.textContent);
     });
   });
 };

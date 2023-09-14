@@ -7,6 +7,7 @@ import angularIcon from '../../res/angularjs.svg';
 import npmIcon from '../../res/npm.svg';
 import webpackIcon from '../../res/webpack.svg';
 
+const timeouts = [];
 const iconsImgs = [
   { url: htmlIcon, name: 'Hypertext Markup Language' },
   { url: cssIcon, name: 'Cascading Style Sheets' },
@@ -25,9 +26,9 @@ const updateSkillIconsContainer = function updateSkillIconsContainer() {
     const headContainer = document.querySelector('.head-container');
     headIcon.style.height = '0px';
     headContainer.style.height = '0px';
-    setTimeout(() => {
+    timeouts.push(setTimeout(() => {
       headContainer.remove();
-    }, 1000);
+    }, 1000));
   }
 };
 
@@ -68,14 +69,14 @@ const moveIcon = function moveIconToCard(index, skillCards) {
   skillIcons[index].style.left = `${nextLeftPos + cardWidth / 2}px`;
   skillIcons[index].style.opacity = 0;
 
-  setTimeout(() => {
+  timeouts.push(setTimeout(() => {
     lastCard.style.opacity = 1;
-  }, 200);
+  }, 200));
 
-  setTimeout(() => {
+  timeouts.push(setTimeout(() => {
     skillIcons[index].remove();
     updateSkillIconsContainer();
-  }, 800);
+  }, 800));
 };
 
 const revealIcon = function revealIconFromHead(index) {
@@ -121,11 +122,11 @@ const revealIcon = function revealIconFromHead(index) {
       break;
   }
 
-  setTimeout(() => {
+  timeouts.push(setTimeout(() => {
     createNewCard(index);
     const skillCards = getSkillCards();
     moveIcon(index, skillCards);
-  }, 1000);
+  }, 1000));
 };
 
 const createSkillIcons = function createSkillIcons() {
@@ -151,7 +152,14 @@ const createPage = function createPage() {
   </div>`;
 };
 
+const clearAllTimeouts = function clearAllTimeouts() {
+  timeouts.forEach((timeout, i) => {
+    clearTimeout(timeouts[i]);
+  });
+};
+
 const initiateSkills = function initiateSkills() {
+  clearAllTimeouts();
   createPage();
   headIcon = document.querySelector('.head-container .head-icon');
   createSkillIcons();
@@ -161,9 +169,9 @@ const initiateSkills = function initiateSkills() {
   skillIcons.forEach((i, index) => {
     const icon = i;
     icon.style.backgroundImage = `url('${iconsImgs[index].url}')`;
-    setTimeout(() => {
+    timeouts.push(setTimeout(() => {
       revealIcon(index);
-    }, 300 * (index + 1));
+    }, 300 * (index + 1)));
   });
 };
 
