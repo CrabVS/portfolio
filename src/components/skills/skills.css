@@ -70,7 +70,7 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
     border-radius: var(--card-radius);
-    border: 1px solid black;
+    outline: 1px solid black;
 }
 
 .skill-card:hover .skill-card-inner {

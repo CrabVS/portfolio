@@ -7,7 +7,13 @@ import angularIcon from '../../res/angularjs.svg';
 import npmIcon from '../../res/npm.svg';
 import webpackIcon from '../../res/webpack.svg';
 
-const iconsImgs = [htmlIcon, cssIcon, jsIcon, angularIcon, npmIcon, webpackIcon];
+const iconsImgs = [
+  { url: htmlIcon, name: 'Hypertext Markup Language' },
+  { url: cssIcon, name: 'Cascading Style Sheets' },
+  { url: jsIcon, name: 'JavaScript' },
+  { url: angularIcon, name: 'Angular' },
+  { url: npmIcon, name: 'Node Package Manager' },
+  { url: webpackIcon, name: 'Webpack' }];
 
 const skillIcons = Array.from(document.querySelectorAll('.head-icon .skill-icon'));
 const skillsContainer = document.querySelector('.skills-container');
@@ -31,18 +37,6 @@ const getSkillCards = function getSkillCards() {
   return skillCards;
 };
 
-// const createNewCard = function createNewCard(index) {
-//   const card = document.createElement('div');
-//   card.classList.add('skill-card');
-
-//   const cardImg = document.createElement('div');
-//   cardImg.classList.add('skill-card-img');
-//   card.appendChild(cardImg);
-//   cardImg.style.backgroundImage = `url('${iconsImgs[index]}')`;
-
-//   skillsContainer.appendChild(card);
-// };
-
 const createNewCard = function createNewCard(index) {
   const card = document.createElement('div');
   card.classList.add('skill-card');
@@ -50,9 +44,9 @@ const createNewCard = function createNewCard(index) {
   card.innerHTML = `
     <div class="skill-card-inner">
       <div class="skill-card-front">
-        <img src="${iconsImgs[index]}" class="skill-card-img">
+        <img src="${iconsImgs[index].url}" class="skill-card-img">
       </div>
-      <div class="skill-card-back">Test</div>
+      <div class="skill-card-back"><h4>${iconsImgs[index].name}</h4></div>
     </div>
   `;
 
@@ -141,7 +135,7 @@ const initiateSkills = function initiateSkills() {
 
   skillIcons.forEach((i, index) => {
     const icon = i;
-    icon.style.backgroundImage = `url('${iconsImgs[index]}')`;
+    icon.style.backgroundImage = `url('${iconsImgs[index].url}')`;
     setTimeout(() => {
       revealIcon(index);
     }, 300 * (index + 1));
