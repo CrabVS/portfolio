@@ -15,14 +15,14 @@ const iconsImgs = [
   { url: npmIcon, name: 'Node Package Manager' },
   { url: webpackIcon, name: 'Webpack' }];
 
-const skillIcons = Array.from(document.querySelectorAll('.head-icon .skill-icon'));
-const skillsContainer = document.querySelector('.skills-container');
+let skillIcons;
+let skillsContainer;
+let headIcon;
 
 const updateSkillIconsContainer = function updateSkillIconsContainer() {
   const skillIcon = document.querySelector('.head-icon .skill-icon');
   if (skillIcon === null) {
     const headContainer = document.querySelector('.head-container');
-    const headIcon = document.querySelector('.head-icon');
     headIcon.style.height = '0px';
     headContainer.style.height = '0px';
     setTimeout(() => {
@@ -54,7 +54,6 @@ const createNewCard = function createNewCard(index) {
 };
 
 const moveIcon = function moveIconToCard(index, skillCards) {
-  const headIcon = document.querySelector('.head-icon');
   const headLeft = headIcon.getClientRects()[0].left;
   const headTop = headIcon.getClientRects()[0].top;
 
@@ -129,8 +128,34 @@ const revealIcon = function revealIconFromHead(index) {
   }, 1000);
 };
 
+const createSkillIcons = function createSkillIcons() {
+  for (let i = 0; i < iconsImgs.length; i += 1) {
+    const newIcon = document.createElement('div');
+    newIcon.classList.add('skill-icon');
+    headIcon.appendChild(newIcon);
+  }
+
+  skillIcons = Array.from(document.querySelectorAll('.head-icon .skill-icon'));
+};
+
+const createPage = function createPage() {
+  const main = document.querySelector('main');
+  main.innerHTML = `
+  <div class="skills-page-container">
+    <div class="head-container">
+        <div class="head-icon">
+        </div>
+    </div>
+    <div class="skills-container">
+    </div>
+  </div>`;
+};
+
 const initiateSkills = function initiateSkills() {
-  const headIcon = document.querySelector('.head-container .head-icon');
+  createPage();
+  headIcon = document.querySelector('.head-container .head-icon');
+  createSkillIcons();
+  skillsContainer = document.querySelector('.skills-container');
   headIcon.style.backgroundImage = `url('${packageIcon}')`;
 
   skillIcons.forEach((i, index) => {
