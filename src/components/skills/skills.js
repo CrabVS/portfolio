@@ -1,11 +1,11 @@
 import './skills.css';
 import packageIcon from '../../res/package-variant.svg';
-import htmlIcon from '../../res/language-html5.svg';
-import cssIcon from '../../res/language-css3.svg';
-import jsIcon from '../../res/language-javascript.svg';
-import angularIcon from '../../res/angularjs.svg';
-import npmIcon from '../../res/npm.svg';
-import webpackIcon from '../../res/webpack.svg';
+import htmlIcon from '../../res/icons8-html5.svg';
+import cssIcon from '../../res/icons8-css3.svg';
+import jsIcon from '../../res/icons8-javascript.svg';
+import angularIcon from '../../res/icons8-angular.svg';
+import npmIcon from '../../res/icons8-npm.svg';
+import webpackIcon from '../../res/icons8-webpack.svg';
 
 const timeouts = [];
 const iconsImgs = [
