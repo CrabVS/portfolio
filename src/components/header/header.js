@@ -3,6 +3,7 @@ import { initiateSkills, clearAllTimeouts } from '../skills/skills';
 import initiateVanilla from '../projects/vanilla-projects/vanilla';
 import initiateAngular from '../projects/angular-projects/angular';
 import initiateHome from '../home/home';
+import initiateContact from '../contact/contact';
 
 const links = Array.from(document.querySelectorAll('nav a'));
 const selector = document.querySelector('nav .selector');
@@ -26,6 +27,9 @@ const updatePage = function updateToNewPage(link) {
       break;
     case 'Angular':
       initiateAngular();
+      break;
+    case 'Contact':
+      initiateContact();
       break;
     default:
       break;
