@@ -1,6 +1,7 @@
 import './header.css';
 import { initiateSkills, clearAllTimeouts } from '../skills/skills';
 import initiateVanilla from '../projects/vanilla-projects/vanilla';
+import initiateAngular from '../projects/angular-projects/angular';
 
 const links = Array.from(document.querySelectorAll('nav a'));
 const selector = document.querySelector('nav .selector');
@@ -20,6 +21,9 @@ const updatePage = function updateToNewPage(link) {
       break;
     case 'Vanilla':
       initiateVanilla();
+      break;
+    case 'Angular':
+      initiateAngular();
       break;
     default:
       break;
