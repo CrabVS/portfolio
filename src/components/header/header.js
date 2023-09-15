@@ -1,5 +1,6 @@
 import './header.css';
 import initiateSkills from '../skills/skills';
+import initiateVanilla from '../projects/vanilla-projects/vanilla';
 
 const links = Array.from(document.querySelectorAll('nav a'));
 const selector = document.querySelector('nav .selector');
@@ -12,6 +13,9 @@ const updatePage = function updateToNewPage(link) {
       break;
     case 'Skills':
       initiateSkills();
+      break;
+    case 'Vanilla':
+      initiateVanilla();
       break;
     default:
       break;
