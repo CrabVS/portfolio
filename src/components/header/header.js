@@ -2,6 +2,7 @@ import './header.css';
 import { initiateSkills, clearAllTimeouts } from '../skills/skills';
 import initiateVanilla from '../projects/vanilla-projects/vanilla';
 import initiateAngular from '../projects/angular-projects/angular';
+import initiateHome from '../home/home';
 
 const links = Array.from(document.querySelectorAll('nav a'));
 const selector = document.querySelector('nav .selector');
@@ -15,6 +16,7 @@ const updatePage = function updateToNewPage(link) {
   lastLink = link;
   switch (link) {
     case 'Home':
+      initiateHome();
       break;
     case 'Skills':
       initiateSkills();

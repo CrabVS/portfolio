@@ -2,7 +2,7 @@ import './reset.css';
 import './style.css';
 
 import initiateHeader from './components/header/header';
-import initiateVanilla from './components/projects/vanilla-projects/vanilla';
+import initiateHome from './components/home/home';
 
 initiateHeader();
-initiateVanilla();
+initiateHome();
