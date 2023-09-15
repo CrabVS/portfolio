@@ -70,7 +70,7 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
     border-radius: var(--card-radius);
-    outline: 1px solid black;
+    outline: 1px solid var(--primary-color);
 }
 
 .skill-card:hover .skill-card-inner {
@@ -91,7 +91,7 @@
 }
 
 .skill-card-front {
-    background-color: #bbb;
+    background-color: var(--background-color);
     color: black;
     display: flex;
     justify-content: center;
@@ -100,7 +100,7 @@
 }
 
 .skill-card-back {
-    background-color: dodgerblue;
+    background-color: var(--secondary-color);
     transform: rotateY(180deg);
     display: flex;
     justify-content: center;
