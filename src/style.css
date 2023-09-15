@@ -7,7 +7,7 @@
     --secondary-color: #41b883;
     --background-color: #f5f5f5;
     --accent-color: #e74c3c;
-    --text-color: #333333;
+    --text-color: #222;
 }
 
 * {
@@ -20,6 +20,10 @@ body {
 
 a {
     cursor: pointer;
+}
+
+h2 {
+    font-size: 2.4rem;
 }
 
 h4 {
@@ -52,4 +56,37 @@ main {
 footer {
     height: var(--footer-height);
     background-color: var(--primary-color);
+}
+
+.title-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    padding: 0 14px;
+}
+
+.title-container h2 {
+    padding-left: 100px;
+    color: var(--text-color);
+}
+
+.title-container h2.backline {
+    position: relative;
+    z-index: 1;
+}
+
+.title-container h2.backline::before {
+    border-top: 2px solid var(--primary-color);
+    opacity: 0.3;
+    content:"";
+    margin: 0 auto; /* this centers the line to the full width specified */
+    position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
+    top: 50%; left: 0; right: 0; bottom: 0;
+    width: 95%;
+    z-index: -1;
+}
+
+.title-container h2.backline span {
+    background: var(--background-color); 
+    padding: 0 15px; 
 }

@@ -142,6 +142,9 @@ const createSkillIcons = function createSkillIcons() {
 const createPage = function createPage() {
   const main = document.querySelector('main');
   main.innerHTML = `
+  <div class="title-container">
+    <h2 class="backline"><span>Skills</span></h2>
+  </div>
   <div class="skills-page-container">
     <div class="head-container">
         <div class="head-icon">
