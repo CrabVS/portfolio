@@ -9,7 +9,7 @@ const createPage = function createPage() {
   </section>`;
 };
 
-const initiateAngular = function initiateVanilla() {
+const initiateAngular = function initiateAngular() {
   createPage();
   const projectsContainer = document.querySelector('.projects-container');
   projectsContainer.appendChild(createProject());
