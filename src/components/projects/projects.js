@@ -9,8 +9,8 @@ const createProject = function createProject() {
       <h4 class="project-title">Title</h4>
       <p class="project-description">Description</p>
       <div class="buttons-container">
-          <button class="btn">View Code</button>
-          <button class="btn">Live Preview</button>
+          <a href="#" attribute rel="noopener noreferrer" target="_blank"><button class="btn">View Code</button></a>
+          <a href="#" attribute rel="noopener noreferrer" target="_blank"><button class="btn">Live Preview</button></a>
       </div>
   </div>`;
 
