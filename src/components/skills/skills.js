@@ -159,7 +159,6 @@ const clearAllTimeouts = function clearAllTimeouts() {
 };
 
 const initiateSkills = function initiateSkills() {
-  clearAllTimeouts();
   createPage();
   headIcon = document.querySelector('.head-container .head-icon');
   createSkillIcons();
@@ -175,4 +174,4 @@ const initiateSkills = function initiateSkills() {
   });
 };
 
-export default initiateSkills;
+export { initiateSkills, clearAllTimeouts };

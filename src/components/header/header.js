@@ -1,15 +1,19 @@
 import './header.css';
-import initiateSkills from '../skills/skills';
+import { initiateSkills, clearAllTimeouts } from '../skills/skills';
 import initiateVanilla from '../projects/vanilla-projects/vanilla';
 
 const links = Array.from(document.querySelectorAll('nav a'));
 const selector = document.querySelector('nav .selector');
 const nav = document.querySelector('nav');
 
+let lastLink = 'Home';
+
 const updatePage = function updateToNewPage(link) {
+  if (lastLink === 'Skills') clearAllTimeouts();
+
+  lastLink = link;
   switch (link) {
     case 'Home':
-      console.log('home');
       break;
     case 'Skills':
       initiateSkills();
