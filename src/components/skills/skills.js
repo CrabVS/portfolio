@@ -3,7 +3,9 @@ import packageIcon from '../../res/package-variant.svg';
 import htmlIcon from '../../res/icons8-html5.svg';
 import cssIcon from '../../res/icons8-css3.svg';
 import jsIcon from '../../res/icons8-javascript.svg';
+import tsIcon from '../../res/icons8-typescript.svg';
 import angularIcon from '../../res/icons8-angular.svg';
+import gitIcon from '../../res/icons8-git.svg';
 import npmIcon from '../../res/icons8-npm.svg';
 import webpackIcon from '../../res/icons8-webpack.svg';
 
@@ -12,9 +14,11 @@ const iconsImgs = [
   { url: htmlIcon, name: 'Hypertext Markup Language' },
   { url: cssIcon, name: 'Cascading Style Sheets' },
   { url: jsIcon, name: 'JavaScript' },
+  { url: tsIcon, name: 'TypeScript' },
   { url: angularIcon, name: 'Angular' },
   { url: npmIcon, name: 'Node Package Manager' },
-  { url: webpackIcon, name: 'Webpack' }];
+  { url: webpackIcon, name: 'Webpack' },
+  { url: gitIcon, name: 'Git' }];
 
 let skillIcons;
 let skillsContainer;
